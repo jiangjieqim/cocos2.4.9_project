@@ -17,6 +17,7 @@
 +----+----+----+
 */
 export class GridShapeVo{
+    id:number;
     posList:cc.Vec2[] = [];
     size:number;
     /**格子数量 */

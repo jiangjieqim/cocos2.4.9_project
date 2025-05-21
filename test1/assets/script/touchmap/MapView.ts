@@ -20,14 +20,13 @@ export class MapView extends cc.Component {
     @property(cc.Node)
     touchNodeParent:cc.Node = null;
 
-    private get model(){
+    private get model():IMapModel{
         return MapModel.Ins;
     }
 
     /**地板节点 */
     private map:cc.Node;
     onLoad() {
-        
 
         this.map = this.node.getChildByName("map");
 
@@ -68,31 +67,34 @@ export class MapView extends cc.Component {
         this.model.emit(MapEvent.DrawGreen,greenIndex);
     }
 
+    /**初始化数据 */
     private initDragItem(){
-        this.createTouchShape("0,0|0,1",0,-200);
+        this.createTouchShape("0,0|0,1",0,-200,1);
         // this.createTouchShape("-1,0|0,0|1,0",200,-200)
-        this.createTouchShape("0,0|1,0|2,0",300,-200)
+        this.createTouchShape("0,0|1,0|2,0",300,-200,2)
         // this.createTouchShape("0,0|1,0",300,-200)
 
     }
 
-    private createGridSharp(str: string, size: number) {
+    private createGridSharp(str: string, size: number,id:number) {
         let vo = new GridShapeVo();
+        vo.id = id;
         vo.size = size;
         vo.setData(str);
         return vo;
     }
 
-    private createTouchShape(str:string,x:number,y:number){
+    private createTouchShape(str:string,x:number,y:number,id:number){
         let _node = cc.instantiate(this.touchNodeParent);
-        _node.addComponent(TouchCell);
+        let scr =  _node.addComponent(TouchCell);
+        scr.model = this.model;
         _node.position=new cc.Vec3(x,y,0);
         // this.node.getChildByName("touchNodeParent");
         // console.log(_node)
         
 
         // "0,0|1,0|2,0"
-        let vo = this.createGridSharp(str,this.model.cellSize);
+        let vo = this.createGridSharp(str,this.model.cellSize,id);
 
         let touchCell:TouchCell = _node.getComponent(TouchCell);
         touchCell.setData(vo,this.touchItem);
@@ -112,6 +114,7 @@ export class MapView extends cc.Component {
         let _node = cc.instantiate(this.blackitem);
         // let size = this.model.cellSize;
         let comp:MapCellView = _node.addComponent(MapCellView);
+        comp.model = this.model;
         comp.setData(vo);
         _node.parent = this.map;
 

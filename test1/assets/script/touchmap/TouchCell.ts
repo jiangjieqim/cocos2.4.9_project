@@ -1,14 +1,14 @@
 import { GridMapFactory } from "./GridMapFactory";
 import { GridShapeVo } from "./GridShapeVo";
 import { MapEvent } from "./MapEvent";
-import { MapModel } from "./MapModel";
 
-const { ccclass, property } = cc._decorator;
+// const { ccclass, property } = cc._decorator;
 
 /**
  * 单个可拖拽节点
  */
 export class TouchCell extends cc.Component{
+    model:IMapModel;
     private touchItem:cc.Node;
     private _touchNode:cc.Node;
     private _data:GridShapeVo;
@@ -26,6 +26,9 @@ export class TouchCell extends cc.Component{
 
         //绘制形状
         let _vo = this._data;
+
+        this.node.getChildByName("lb").getComponent(cc.Label).string = `x${this.model.getCount(_vo.id)}`
+
         touchNode.width = _vo.gridW * _vo.size;
         touchNode.height= _vo.gridH * _vo.size;
         let ox = _vo.offsetX;
@@ -49,9 +52,9 @@ export class TouchCell extends cc.Component{
         this.model.off(MapEvent.Reset,this.onReset,this);
     }
 
-    private get model(){
-        return MapModel.Ins
-    }
+    // private get model(){
+    //     return MapModel.Ins
+    // }
  
     private onTouchStart(event:cc.Event.EventTouch){
         let wpos1 = event.getLocation();
@@ -84,12 +87,12 @@ export class TouchCell extends cc.Component{
         // EventCenter.dispatchEvent({ name: ENM.GAME_TOUCH_MOVE_Zancun, wpos: wpos1 });
         // console.log("onTouchMove:",wpos1.x,wpos1.y);
     
-        MapModel.Ins.emit(MapEvent.Move,{pos:wpos1,data:this._data} as IMoveData);
+        this.model.emit(MapEvent.Move,{pos:wpos1,data:this._data} as IMoveData);
     }
 
     private onTouchEnd(event:cc.Event.EventTouch){
         let wpos1 = event.getLocation();
         // console.log("onTouchEnd:",wpos1.x,wpos1.y);
-        MapModel.Ins.emit(MapEvent.End,{pos:wpos1,data:this._data} as IMoveData);
+        this.model.emit(MapEvent.End,{pos:wpos1,data:this._data} as IMoveData);
     }
 }

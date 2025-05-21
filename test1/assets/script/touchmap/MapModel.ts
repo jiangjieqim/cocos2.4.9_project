@@ -1,13 +1,15 @@
 import { EMapEnum } from "./EMapEnum";
 import { MapPos } from "./MapVo";
+import { MapDataServer } from "./server/MapDataServer";
 /**地图数据数据结构 */
-export class MapModel extends cc.EventTarget {
+export class MapModel extends cc.EventTarget implements IMapModel{
     /**地图横向格子数 */
     w:number;
     /**地图纵向格子数 */
     h:number;
     cellSize:number;
     private posList:MapPos[] = [];
+    server:MapDataServer = new MapDataServer();
 
     static _Ins:MapModel;
     static get Ins(){
@@ -78,5 +80,13 @@ export class MapModel extends cc.EventTarget {
 
     get mapCellVos(){
         return this.posList;
+    }
+
+    getCount(id:number){
+        let cell = this.server.dataList.find(o=>o.id == id);
+        if(cell){
+            return cell.count;
+        }
+        return 0;
     }
 }

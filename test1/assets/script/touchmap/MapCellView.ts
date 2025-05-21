@@ -1,11 +1,12 @@
 import { EMapEnum } from "./EMapEnum";
 import { GridMapFactory } from "./GridMapFactory";
 import { MapEvent } from "./MapEvent";
-import { MapModel } from "./MapModel";
+// import { MapModel } from "./MapModel";
 import { MapPos } from "./MapVo";
 /**地图区块格子 */
 export class MapCellView extends cc.Component {
     // private _size:number;
+    model:IMapModel;
     private _vo: MapPos;
     private greenBg:cc.Node;
     onLoad() {
@@ -49,9 +50,9 @@ export class MapCellView extends cc.Component {
     //  }
     // }
 
-    private get model(){
-        return MapModel.Ins;
-    }
+    // private get model(){
+    //     return MapModel.Ins;
+    // }
 
     setData(_vo: MapPos) {
         this._vo = _vo;
