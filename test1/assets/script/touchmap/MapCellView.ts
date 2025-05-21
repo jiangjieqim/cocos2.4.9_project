@@ -45,7 +45,8 @@ export class MapCellView extends cc.Component {
         switch(vo.gridType){
             case EMapEnum.NotUsed:
                 bg.getComponent(cc.Sprite).spriteFrame = null;
-                GridMapFactory.debugDrawLine(_node, size, cc.Color.YELLOW);
+                // GridMapFactory.debugDrawLine(_node, size, cc.Color.YELLOW);
+                GridMapFactory.debugDrawRect(_node,size,new cc.Color(255,255,0,32));
                 break;
             case EMapEnum.Used:
                 GridMapFactory.debugDrawLine(_node, size, cc.Color.RED);

@@ -39,6 +39,42 @@ export class GridMapFactory {
         node.parent = target;
     }
 
+
+    static debugDrawRect(target: cc.Node, size: number, color: cc.Color) {
+        if(!this.debug){
+            return;
+        }
+        let _nodeName = "LineNode";
+
+        if(target.getChildByName(_nodeName)){
+            return;
+        }
+
+        const node = new cc.Node(_nodeName);
+        const graphics = node.addComponent(cc.Graphics);
+
+        // graphics.lineWidth = 2;
+        graphics.fillColor = color;
+
+        // graphics.moveTo(0, 0);
+        // graphics.lineTo(size, 0);
+        // graphics.lineTo(size, -size);
+        // graphics.lineTo(0, -size);
+        // graphics.lineTo(0, 0);
+
+        graphics.rect(0, 0, size, -size); // 参数：x, y, width, height
+
+        // 结束填充
+        graphics.fill();
+
+
+        graphics.stroke();
+        // node.opacity = 64;
+        node.x = -size / 2;
+        node.y = size / 2;
+        node.parent = target;
+    }
+
     static debugDrawCircle(target: cc.Node, radius: number = 5) {
         if(!this.debug){
             return;
