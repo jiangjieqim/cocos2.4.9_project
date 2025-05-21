@@ -37,7 +37,7 @@ export class MapModel extends cc.EventTarget implements IMapModel{
 
     private onSucceed(obj:IMapSucceedData){
         console.log("succeed ------------->"+JSON.stringify(obj));
-        // this.server.use(this,obj,this,this.onUseCallBack);
+        this.server.use(this,obj,this,this.onUseCallBack);
     }
     
     /**使用返回成功 */

@@ -26,8 +26,7 @@ export class TouchCell extends cc.Component{
 
         //绘制形状
         let _vo = this._data;
-
-        this.node.getChildByName("lb").getComponent(cc.Label).string = `x${this.model.getCount(_vo.id)}`
+        this.updateCount();
 
         touchNode.width = _vo.gridW * _vo.size;
         touchNode.height= _vo.gridH * _vo.size;
@@ -42,6 +41,13 @@ export class TouchCell extends cc.Component{
             GridMapFactory.debugDrawLine(item,_vo.size,cc.Color.GREEN);
         }
         this.model.on(MapEvent.Reset,this.onReset,this);
+        this.model.on(MapEvent.UseSucceedRefresh,this.updateCount,this);
+
+    }
+
+    private updateCount(){
+        let _vo = this._data;
+        this.node.getChildByName("lb").getComponent(cc.Label).string = `x${this.model.getCount(_vo.id)}`
     }
 
     private onReset(){
@@ -50,6 +56,7 @@ export class TouchCell extends cc.Component{
 
     onDestroy(){
         this.model.off(MapEvent.Reset,this.onReset,this);
+        this.model.off(MapEvent.UseSucceedRefresh,this.updateCount,this);
     }
 
     // private get model(){

@@ -47,10 +47,11 @@ export class MapDataServer {
         //数据处理
         let indexs = _data.selectIDs;
         for(let i = 0;i < indexs.length;i++){
-            this.setMapType(model,indexs[i],EMapEnum.Touched)
+            let curIndex:number = indexs[i];
+            this.setMapType(model,curIndex,EMapEnum.Touched)
         }
-        //-------------------------------------------------
         obj.count--;
+        //-------------------------------------------------
         func.call(that);
     }
 }
