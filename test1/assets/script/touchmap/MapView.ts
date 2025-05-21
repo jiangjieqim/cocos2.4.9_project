@@ -45,7 +45,7 @@ export class MapView extends cc.Component {
         return this.map.parent.convertToWorldSpaceAR(new cc.Vec3(this.map.x, this.map.y, 0));
     }
     private onEnd(_eventData:IMoveData){
-        let greenIndex = GridMapFactory.getTouchIndexs(_eventData,this.offsetPos);
+        let greenIndex = GridMapFactory.getTouchIndexs(this.model.mapCellVos,_eventData,this.offsetPos);
         
         let _data:GridShapeVo = _eventData.data;
         if(greenIndex.length >= _data.posList.length ){
@@ -62,7 +62,7 @@ export class MapView extends cc.Component {
     }
 
     private onMove(_eventData:IMoveData){        
-        let greenIndex = GridMapFactory.getTouchIndexs(_eventData,this.offsetPos);
+        let greenIndex = GridMapFactory.getTouchIndexs(this.model.mapCellVos,_eventData,this.offsetPos);
         // console.log("---->find...",JSON.stringify(greenIndex)+","+`[${ox},${oy}]`);
 
         this.model.emit(MapEvent.DrawGreen,greenIndex);

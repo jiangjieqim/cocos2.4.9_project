@@ -1,6 +1,5 @@
 import { EMapEnum } from "./EMapEnum";
 import { GridShapeVo } from "./GridShapeVo";
-import { MapModel } from "./MapModel";
 
 export class GridMapFactory {
     private static get debug(){
@@ -62,8 +61,8 @@ export class GridMapFactory {
         _lbNode.parent = target;
     }
 
-    static getTouchIndexs(_eventData:IMoveData,offsetPos:cc.Vec3){
-        let model = MapModel.Ins;
+    static getTouchIndexs(mapCellVos,_eventData:IMoveData,offsetPos:cc.Vec3){
+        // let model = MapModel.Ins;
 
         let _vo:cc.Vec2 = _eventData.pos;
         let ox = _vo.x - offsetPos.x;
@@ -76,7 +75,7 @@ export class GridMapFactory {
 
         // let findVo:MapPos;
         let greenIndex:number[] = [];
-        let mapCellVos = model.mapCellVos;
+        // let mapCellVos = model.mapCellVos;
         for(let i = 0;i < mapCellVos.length;i++){
             let vo = mapCellVos[i];
             if(vo.gridType == EMapEnum.Used){

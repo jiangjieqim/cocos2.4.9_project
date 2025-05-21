@@ -3,7 +3,7 @@ import { GridMapFactory } from "./GridMapFactory";
 import { MapEvent } from "./MapEvent";
 import { MapModel } from "./MapModel";
 import { MapPos } from "./MapVo";
-
+/**地图区块格子 */
 export class MapCellView extends cc.Component {
     // private _size:number;
     private _vo: MapPos;
