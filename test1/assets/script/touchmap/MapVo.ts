@@ -1,6 +1,7 @@
 import { EMapEnum } from "./EMapEnum";
 
-export class MapPos{
+/**地图区块格子 */
+export class MapPos implements IMapPos{
     isox:number;
     isoy:number;
 

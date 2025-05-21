@@ -3,9 +3,17 @@ interface IMoveData{
     data;
 }
 
+interface IMapPos{
+    gridType:number;
+    isox:number;
+    isoy:number;
+    cellSize:number;
+    index:number;
+    checkIn(x:number,y:number);
+}
 
 interface IMapModel extends cc.EventTarget{
-    mapCellVos:MapPos[];
+    mapCellVos:IMapPos[];
     cellSize:number;
     /**获取剩余数量 */
     getCount(id:number);

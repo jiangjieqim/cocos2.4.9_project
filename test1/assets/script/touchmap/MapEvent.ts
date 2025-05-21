@@ -13,4 +13,7 @@ export class MapEvent {
 
     /**操作成功 */
     static Succeed = "Succeed"
+    
+    /**成功使用之后刷新 */
+    static UseSucceedRefresh = "UseSucceedRefresh"
 }

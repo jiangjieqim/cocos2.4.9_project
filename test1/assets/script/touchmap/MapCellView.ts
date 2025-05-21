@@ -11,26 +11,52 @@ export class MapCellView extends cc.Component {
     private greenBg:cc.Node;
     onLoad() {
         let _node = this.node;
+
         let vo = this._vo;
         let size = vo.cellSize;
         _node.position = cc.v3(vo.isox * size, vo.isoy * size, 0);
 
-        let bg = _node.getChildByName("bg");
         let greenBg = _node.getChildByName("greenBg");
         greenBg.active = false;
         this.greenBg = greenBg;
         GridMapFactory.debugCreateLabel(_node, `${vo.isox},${vo.isoy}`);
-        if (vo.gridType == EMapEnum.NotUsed) {
-            bg.getComponent(cc.Sprite).spriteFrame = null;
-            GridMapFactory.debugDrawLine(_node, size, cc.Color.YELLOW);
-        } else {
-            GridMapFactory.debugDrawLine(_node, size, cc.Color.RED);
-        }
+        this.onRefresh();
         this.model.on(MapEvent.DrawGreen,this.onDrawGreen,this);
         this.model.on(MapEvent.Reset,this.onReset,this);
 
         // this.model.on(MapEvent.ClearDrawGreen,this.onClearDrawGreen,this);
     }
+
+
+    private onRefresh(){
+        let _node = this.node;
+        let vo = this._vo;
+        let bg = _node.getChildByName("bg");
+        let size = vo.cellSize;
+
+        // if (vo.gridType == EMapEnum.NotUsed) {
+        //     bg.getComponent(cc.Sprite).spriteFrame = null;
+        //     GridMapFactory.debugDrawLine(_node, size, cc.Color.YELLOW);
+        // } else {
+        //     GridMapFactory.debugDrawLine(_node, size, cc.Color.RED);
+        // }
+
+        switch(vo.gridType){
+            case EMapEnum.NotUsed:
+                bg.getComponent(cc.Sprite).spriteFrame = null;
+                GridMapFactory.debugDrawLine(_node, size, cc.Color.YELLOW);
+                break;
+            case EMapEnum.Used:
+                GridMapFactory.debugDrawLine(_node, size, cc.Color.RED);
+                break;
+            case EMapEnum.Touched:
+                bg.getComponent(cc.Sprite).spriteFrame = null;
+                break;
+        }
+
+    }
+
+
 
     private onReset(){
         this.greenBg.active = false;

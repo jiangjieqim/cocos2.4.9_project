@@ -14,7 +14,13 @@ export class GridMapFactory {
         if(!this.debug){
             return;
         }
-        const node = new cc.Node('LineNode');
+        let _nodeName = "LineNode";
+
+        if(target.getChildByName(_nodeName)){
+            return;
+        }
+
+        const node = new cc.Node(_nodeName);
         const graphics = node.addComponent(cc.Graphics);
 
         graphics.lineWidth = 2;
@@ -37,7 +43,12 @@ export class GridMapFactory {
         if(!this.debug){
             return;
         }
-        const node = new cc.Node('LineNode');
+        let _nodeName = "LineNode";
+
+        if(target.getChildByName(_nodeName)){
+            return;
+        }
+        const node = new cc.Node(_nodeName);
         const graphics = node.addComponent(cc.Graphics);
         graphics.strokeColor = cc.Color.RED;
         graphics.lineWidth = 4;

@@ -10,6 +10,7 @@ export class MapModel extends cc.EventTarget implements IMapModel{
     h:number;
     cellSize:number;
     private posList:MapPos[] = [];
+    /**后端接口处理 */
     server:MapDataServer = new MapDataServer();
 
     static _Ins:MapModel;
@@ -36,6 +37,12 @@ export class MapModel extends cc.EventTarget implements IMapModel{
 
     private onSucceed(obj:IMapSucceedData){
         console.log("succeed ------------->"+JSON.stringify(obj));
+        // this.server.use(this,obj,this,this.onUseCallBack);
+    }
+    
+    /**使用返回成功 */
+    private onUseCallBack(){
+        this.emit(MapEvent.UseSucceedRefresh);
     }
 
     /**初始化数据 */
@@ -84,6 +91,7 @@ export class MapModel extends cc.EventTarget implements IMapModel{
         }
     }
 
+    /**地图区块 */
     get mapCellVos(){
         return this.posList;
     }
