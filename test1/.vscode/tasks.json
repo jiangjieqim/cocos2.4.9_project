@@ -100,7 +100,7 @@
         {
             "label": "chrome read.md",
             "type": "shell",
-            "command": "chrome http://127.0.0.1:8001/github/jjqmdlib/entry/doc.html?basepath=/mygitblit/cocos2.4.9_project/\"&\"file=read.md",
+            "command": "chrome http://127.0.0.1:8001/github/jjqmdlib/entry/doc.html?basepath=/github/cocos2.4.9_project/\"&\"file=read.md",
             "problemMatcher": []
         }
     ]
