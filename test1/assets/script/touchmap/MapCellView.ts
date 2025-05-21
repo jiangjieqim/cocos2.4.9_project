@@ -23,6 +23,7 @@ export class MapCellView extends cc.Component {
         this.onRefresh();
         this.model.on(MapEvent.DrawGreen,this.onDrawGreen,this);
         this.model.on(MapEvent.Reset,this.onReset,this);
+        this.model.on(MapEvent.UseSucceedRefresh,this.onRefresh,this);
 
         // this.model.on(MapEvent.ClearDrawGreen,this.onClearDrawGreen,this);
     }
@@ -87,6 +88,8 @@ export class MapCellView extends cc.Component {
     onDestroy(){
         this.model.off(MapEvent.DrawGreen,this.onDrawGreen,this);
         this.model.off(MapEvent.Reset,this.onReset,this);
+        this.model.off(MapEvent.UseSucceedRefresh,this.onRefresh,this);
+
         // this.model.off(MapEvent.ClearDrawGreen,this.onClearDrawGreen,this)
     }
 }
