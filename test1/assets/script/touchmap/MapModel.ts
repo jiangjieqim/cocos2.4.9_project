@@ -1,4 +1,5 @@
 import { EMapEnum } from "./EMapEnum";
+import { MapEvent } from "./MapEvent";
 import { MapPos } from "./MapVo";
 import { MapDataServer } from "./server/MapDataServer";
 /**地图数据数据结构 */
@@ -29,7 +30,12 @@ export class MapModel extends cc.EventTarget implements IMapModel{
 
     constructor(){
         super();
+        this.on(MapEvent.Succeed,this.onSucceed,this)
         this.init();
+    }
+
+    private onSucceed(obj:IMapSucceedData){
+        console.log("succeed ------------->"+JSON.stringify(obj));
     }
 
     /**初始化数据 */

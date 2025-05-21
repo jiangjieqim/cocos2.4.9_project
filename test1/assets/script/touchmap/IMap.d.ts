@@ -10,3 +10,8 @@ interface IMapModel extends cc.EventTarget{
     /**获取剩余数量 */
     getCount(id:number);
 }
+
+interface IMapSucceedData{
+    selectIDs:number[];
+    touchId:number;
+}

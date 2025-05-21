@@ -10,4 +10,7 @@ export class MapEvent {
 
     /**重置 */
     static Reset = "Reset";
+
+    /**操作成功 */
+    static Succeed = "Succeed"
 }

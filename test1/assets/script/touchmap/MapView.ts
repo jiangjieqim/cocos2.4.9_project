@@ -48,7 +48,11 @@ export class MapView extends cc.Component {
         
         let _data:GridShapeVo = _eventData.data;
         if(greenIndex.length >= _data.posList.length ){
-            console.log(`succeed end..` + JSON.stringify(greenIndex));
+            let obj:IMapSucceedData = {} as IMapSucceedData;
+            obj.selectIDs = greenIndex;
+            obj.touchId = _eventData.data.id;
+            // console.log(`succeed end..` + JSON.stringify(greenIndex));
+            this.model.emit(MapEvent.Succeed,obj);
         }
         else{
             console.log(`fail...`);
@@ -70,10 +74,9 @@ export class MapView extends cc.Component {
     /**初始化数据 */
     private initDragItem(){
         this.createTouchShape("0,0|0,1",0,-200,1);
-        // this.createTouchShape("-1,0|0,0|1,0",200,-200)
         this.createTouchShape("0,0|1,0|2,0",300,-200,2)
         // this.createTouchShape("0,0|1,0",300,-200)
-
+        // this.createTouchShape("-1,0|0,0|1,0",200,-200)
     }
 
     private createGridSharp(str: string, size: number,id:number) {

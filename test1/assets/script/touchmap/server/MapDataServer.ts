@@ -15,7 +15,9 @@ export class MapDataServer {
     constructor(){
 
         this.dataList.push(new MapTouchVo(2,1));
-        this.dataList.push(new MapTouchVo(3,1));
+        this.dataList.push(new MapTouchVo(3,2));
 
     }
+
+    
 }
