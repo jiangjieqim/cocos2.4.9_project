@@ -1,4 +1,4 @@
-坦克竞赛相关{h}:8001/github/jjqmdlib/entry/doc.html?file=mygitblit\cocos2.4.9_project\pahahaha_project.md{!h}
+坦克竞赛相关{h}:8001/github/jjqmdlib/entry/doc.html?file=github\cocos2.4.9_project\pahahaha_project.md{!h}
 
 时间戳工具{h}https://tool.lu/timestamp{!h}  
 
