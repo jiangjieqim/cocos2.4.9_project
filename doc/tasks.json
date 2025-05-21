@@ -1,0 +1,107 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "compile--->编译",
+            "command": "curl",
+            "args": [
+                "http://localhost:7456/update-db"
+            ],
+            "type": "shell",
+            "isBackground": true,
+            "group": "build",
+            "presentation": {
+                "reveal": "always"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "commit script",
+            "type": "shell",
+            "command": "TortoiseProc.exe /command:commit /path:%cd%/assets/scripts /closeonend: 0 /logmsg .",
+            "problemMatcher": []
+        },
+        {
+            "label": "copy tasks",
+            "type": "shell",
+            "command": "copy .vscode\\tasks.json %githubdir%\\cc2_4_9\\doc\\tasks.json & cd %githubdir%\\cc2_4_9\\doc & TortoiseGitProc.exe /command:commit /path:tasks.json /closeonend:0 /logmsg:. & git push",
+            "problemMatcher": [],
+        },
+        {
+            "label": "copy launch and tasks",
+            "type": "shell",
+            "command": "copy .vscode\\launch.json %githubdir%\\cc2_4_9\\doc\\launch.json & cd %githubdir%\\cc2_4_9\\doc & TortoiseGitProc.exe /command:commit /path:launch.json /closeonend:0 /logmsg:. & git push",
+            "problemMatcher": [],
+            "dependsOn": [
+                "copy tasks"
+            ]
+        },
+        {
+            "label": "svn up...",
+            "type": "shell",
+            // "command": "svn up",
+            "command": "cd .. & svn up",
+            "problemMatcher": []
+        },
+        {
+            "label": "svn commit ${file}",
+            "type": "shell",
+            "command": "TortoiseProc.exe /command:commit /path:${file} /closeonend: 0 /logmsg ",
+            "problemMatcher": []
+        },
+        {
+            "label": "svn status",
+            "type": "shell",
+            // "command": "svn up",
+            "command": "cd .. & svn status",
+            "problemMatcher": []
+        },
+        {
+            "label": "commit assets",
+            "type": "shell",
+            "command": "TortoiseProc.exe /command:commit /path:%cd%/assets /closeonend: 0 /logmsg ",
+            "problemMatcher": []
+        },
+        {
+            "label": "open designer 文档",
+            "type": "shell",
+            "command": "cd ../designer/文档 & explorer .",
+            // "command": "cd D:/zzqx/trunk/designer/文档 & explorer .",
+            "problemMatcher": []
+        },
+        {
+            "label": "open 协议文档",
+            "type": "shell",
+            "command": "cd ../common/protobuf & explorer .",
+            // "command": "cd D:/zzqx/trunk/common/protobuf & explorer",
+            "problemMatcher": []
+        },
+        // D:\zzqx\trunk\common\protobuf
+        {
+            "label": "open 切图",
+            "type": "shell",
+            "command": "cd ../art/UI & explorer .",
+            "problemMatcher": []
+        },
+        {
+            "label": "open excel",
+            "type": "shell",
+            "command": "cd ../designer/excel & explorer .",
+            "problemMatcher": []
+        },
+        {
+            "label": "CMD整个生成 compile all",
+            "type": "shell",
+            "command": "call cmd/compile ${workspaceFolder} false",
+            "problemMatcher": []
+        },
+        {
+            "label": "CMD编译脚本 script",
+            "type": "shell",
+            "command": "call cmd/compile ${workspaceFolder} true",
+            "problemMatcher": []
+        }
+    ]
+}

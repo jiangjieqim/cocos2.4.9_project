@@ -1,0 +1,41 @@
+{
+    "version": "1.4.0",
+    "configurations": [
+        {
+            "name": "Creator Debug: Launch Chrome",
+            "type": "chrome",
+            "request": "launch",
+            "url": "http://localhost:7457",
+            "sourceMaps": true,
+            // "userDataDir": "${workspaceFolder}/.vscode/chrome",
+            "runtimeExecutable": "${env:chromepath}",
+            // "diagnosticLogging": false,
+            "pathMapping": {
+                "/preview-scripts/assets": "${workspaceFolder}/temp/quick-scripts/dst/assets",
+                "/": "${workspaceFolder}"
+            }    
+        },
+        {
+			"name": "web_dev",
+			"type": "chrome",
+			"request": "launch",
+		
+			"url": "http://127.0.0.1:8001/mygitblit/cocos2.4.9_project/test1/build/web-mobile/index.html",
+            //"trace": true,
+			"runtimeExecutable": "${env:chromepath}",
+			"runtimeArgs": [
+				"--allow-file-access-from-files",
+				"--disable-web-security"
+			],
+			"sourceMaps": true,
+			"webRoot": "d:/",
+			// "sourceMapPathOverrides":
+            "pathMapping":
+            {
+                "/*":"${workspaceFolder}/build/web-mobile/assets/main/*",
+                "/assets/script/*":"${workspaceFolder}/build/web-mobile/assets/main/assets/script/*",
+                // http://127.0.0.1:8001/github/cc2_4_9/test1/build/web-mobile/assets/main/assets/script/Test2.ts
+            }
+		}
+    ]
+}

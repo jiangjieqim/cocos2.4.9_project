@@ -1,0 +1,77 @@
+{
+    "version": "1.4.0",
+    "configurations": [
+        {
+            "name": "Creator Debug: Launch Chrome",
+            "type": "chrome",
+            "request": "launch",
+           
+            // "url": "http://localhost:7456/?url=ws://zx-kr-server.pahahaha.com:13208&disableGuide=1&debug=1&user=1",
+            "url": "http://localhost:7456/?debug=1",
+           
+
+            //外网
+            // "url":"http://localhost:7456/?srvList=https://zzqx-test.wanhuir.com/server/list&ws=wss&platformId=1002&debug=1",
+
+
+            "sourceMaps": true,
+            // "userDataDir": "${workspaceFolder}/.vscode/chrome",
+            // "diagnosticLogging": false,
+            "pathMapping": {
+                "/preview-scripts/assets": "${workspaceFolder}/temp/quick-scripts/dst/assets",
+                "/": "${workspaceFolder}"
+            }
+        },
+        {
+            "name": "outer net",
+            "type": "chrome",
+            "request": "launch",
+            // "url": "http://127.0.0.1:8001/zzqx/build1/web-mobile/index.html?url=ws://zx-kr-server.pahahaha.com:13208&disableGuide=1&debug=1&user=222222222222222",
+            //内网
+            // "url":"http://localhost:7456/?url=ws://zx-kr-server.pahahaha.com:13208&disableGuide=1&debug=1&user=1",
+            //外网
+            "url":"http://localhost:7456/?srvList=https://zzqx-test.wanhuir.com/server/list&ws=wss&platformId=1002&debug=1",
+
+            "runtimeExecutable": "${env:chromepath}",
+            "runtimeArgs": [
+                "--allow-file-access-from-files",
+                // "--disable-web-security"
+            ],
+            "sourceMaps": true,
+            "webRoot": "d:/",
+            // "sourceMapPathOverrides": 
+            "pathMapping": {
+                "/*": "${workspaceFolder}/build/web-mobile/assets/main/*",
+                "/assets/script/*": "${workspaceFolder}/build/web-mobile/assets/main/assets/script/*",
+            }
+        },
+        {
+            "name": "local net",
+            "type": "chrome",
+            "request": "launch",
+            
+            //内网
+            // "url":"http://localhost:7456/?url=ws://zx-kr-server.pahahaha.com:13208&disableGuide=1&debug=1&user=1",
+
+            "url":"http://localhost:7456/?debug=1&user=040106&disableGuide=1",
+            // 041003
+            // 041198
+
+
+            "runtimeExecutable": "${env:chromepath}",
+            "runtimeArgs": [
+                "--allow-file-access-from-files",
+                "--disable-web-security"
+            ],
+            "sourceMaps": true,
+            "webRoot": "d:/",
+            "pathMapping": {
+                "/*": "${workspaceFolder}/build/web-mobile/assets/main/*",
+                "/assets/script/*": "${workspaceFolder}/build/web-mobile/assets/main/assets/script/*",
+            }
+        }
+        
+
+
+    ]
+}

@@ -1,0 +1,20 @@
+{
+  "name": "cocos_inspector",
+  "version": "1.0.9",
+  "description": "Cocos Runtime Inspector",
+  "author": "chuan.zhang",
+  "main": "main.js",
+  "main-menu": {
+    "i18n:MAIN_MENU.package.title/Cocos Inspector/preview Mode": {
+      "message": "cocos_inspector:previewMode"
+    },
+    "i18n:MAIN_MENU.package.title/Cocos Inspector/build Mode": {
+      "message": "cocos_inspector:buildMode"
+    },
+    "i18n:MAIN_MENU.package.title/Cocos Inspector/open Custom Page": {
+      "message": "cocos_inspector:openCustomPage"
+    }
+  },
+  "dependencies": {
+  }
+}

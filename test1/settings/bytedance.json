@@ -1,0 +1,8 @@
+{
+  "appid": "testappId",
+  "orientation": "portrait",
+  "separate_engine": false,
+  "REMOTE_SERVER_ROOT": "http://192.168.110.177:8001/mygitblit/cocos2.4.9_project/test1/build/wechatgame/",
+  "subContext": "",
+  "startSceneAssetBundle": false
+}

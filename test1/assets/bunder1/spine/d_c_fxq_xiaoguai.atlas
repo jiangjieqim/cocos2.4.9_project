@@ -1,0 +1,48 @@
+
+d_c_fxq_xiaoguai.png
+size: 512,128
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+body
+  rotate: false
+  xy: 2, 2
+  size: 205, 113
+  orig: 205, 113
+  offset: 0, 0
+  index: -1
+deng
+  rotate: false
+  xy: 311, 25
+  size: 96, 90
+  orig: 96, 90
+  offset: 0, 0
+  index: -1
+deng_xiao1
+  rotate: false
+  xy: 409, 38
+  size: 45, 25
+  orig: 45, 25
+  offset: 0, 0
+  index: -1
+deng_xiao2
+  rotate: false
+  xy: 409, 65
+  size: 50, 50
+  orig: 50, 50
+  offset: 0, 0
+  index: -1
+deng_xiao3
+  rotate: false
+  xy: 456, 38
+  size: 25, 25
+  orig: 25, 25
+  offset: 0, 0
+  index: -1
+guangdeng
+  rotate: false
+  xy: 209, 15
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
