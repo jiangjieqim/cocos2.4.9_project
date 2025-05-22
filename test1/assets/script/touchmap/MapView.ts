@@ -75,6 +75,8 @@ export class MapView extends cc.Component {
     private initDragItem(){
         this.createTouchShape("0,0|0,1",0,-200,1);
         this.createTouchShape("0,0|1,0|2,0",300,-200,2)
+        this.createTouchShape("0,0",550,-200,2)
+
         // this.createTouchShape("0,0|1,0",300,-200)
         // this.createTouchShape("-1,0|0,0|1,0",200,-200)
     }
@@ -92,13 +94,7 @@ export class MapView extends cc.Component {
         let scr =  _node.addComponent(TouchCell);
         scr.model = this.model;
         _node.position=new cc.Vec3(x,y,0);
-        // this.node.getChildByName("touchNodeParent");
-        // console.log(_node)
-        
-
-        // "0,0|1,0|2,0"
         let vo = this.createGridSharp(str,this.model.cellSize,id);
-
         let touchCell:TouchCell = _node.getComponent(TouchCell);
         touchCell.setData(vo,this.touchItem);
         _node.parent = this.node; 

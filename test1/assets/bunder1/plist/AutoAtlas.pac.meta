@@ -18,23 +18,6 @@
   "packable": false,
   "premultiplyAlpha": false,
   "filterMode": "bilinear",
-  "platformSettings": {
-    "minigame": {
-      "formats": [
-        {
-          "name": "etc1",
-          "quality": "fast"
-        },
-        {
-          "name": "pvrtc_2bits_rgb_a",
-          "quality": "normal"
-        },
-        {
-          "name": "png",
-          "quality": 80
-        }
-      ]
-    }
-  },
+  "platformSettings": {},
   "subMetas": {}
 }

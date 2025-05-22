@@ -102,6 +102,12 @@
             "type": "shell",
             "command": "chrome http://127.0.0.1:8001/github/jjqmdlib/entry/doc.html?basepath=/github/cocos2.4.9_project/\"&\"file=read.md",
             "problemMatcher": []
+        },
+        {
+            "label": "cc_compress",
+            "type": "shell",
+            "command": "echo off & cd../ && call skip cc_compress ${workspaceFolder}/build/wechatgame",
+            "problemMatcher": []
         }
     ]
 }

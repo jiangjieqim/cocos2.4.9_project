@@ -40,7 +40,8 @@ export class MapDataServer {
             return;
         }
         if(obj.count <= 0){  
-            console.error(`道具数量不足`);
+            // console.error(`道具数量不足`);
+            gameCore.showMsg(`道具数量不足`);
             return;
         }
         //-------------------------------------------------

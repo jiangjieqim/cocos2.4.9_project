@@ -8,9 +8,26 @@
   "premultiplyAlpha": false,
   "genMipmaps": false,
   "packable": true,
-  "width": 32,
-  "height": 32,
-  "platformSettings": {},
+  "width": 24,
+  "height": 24,
+  "platformSettings": {
+    "minigame": {
+      "formats": [
+        {
+          "name": "etc1",
+          "quality": "fast"
+        },
+        {
+          "name": "pvrtc_2bits_rgb_a",
+          "quality": "normal"
+        },
+        {
+          "name": "png",
+          "quality": 80
+        }
+      ]
+    }
+  },
   "subMetas": {
     "common_img_bottom31": {
       "ver": "1.0.6",

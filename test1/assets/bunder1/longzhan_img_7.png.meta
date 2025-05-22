@@ -10,7 +10,24 @@
   "packable": true,
   "width": 498,
   "height": 267,
-  "platformSettings": {},
+  "platformSettings": {
+    "minigame": {
+      "formats": [
+        {
+          "name": "etc1",
+          "quality": "fast"
+        },
+        {
+          "name": "pvrtc_2bits_rgb_a",
+          "quality": "normal"
+        },
+        {
+          "name": "png",
+          "quality": 80
+        }
+      ]
+    }
+  },
   "subMetas": {
     "longzhan_img_7": {
       "ver": "1.0.6",
