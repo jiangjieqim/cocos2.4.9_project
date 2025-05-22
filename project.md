@@ -101,11 +101,13 @@ node cc_compile.js --w %work% --remote "http://192.168.110.177:8001/zzqx/trunk/c
 
 # 打包资源批处理
 
-* 1. vscode runtask `buildMeta`  
-    备注 还原使用 vocode runtask `buildMetaClear`  
+* 1. vscode runtask {r}buildMeta{!r}  
+    备注 还原使用 vocode runtask {r}buildMetaClear{!r}  
     清理之前请svn 最好提交 assets下的所有文件  
 
 * 2. 按原有流程打包
+
+* 2.1 vscode runtask {r}压缩 build/wechatgame PNG{!r}
 
 * 3. CDN后台开启gzip后缀png pkm pvr(首次操作一次即可)  
 
