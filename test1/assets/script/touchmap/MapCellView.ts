@@ -19,7 +19,7 @@ export class MapCellView extends cc.Component {
         let greenBg = _node.getChildByName("greenBg");
         greenBg.active = false;
         this.greenBg = greenBg;
-        GridMapFactory.debugCreateLabel(_node, `${vo.isox},${vo.isoy}`);
+        // GridMapFactory.debugCreateLabel(_node, `${vo.isox},${vo.isoy}`);
         this.onRefresh();
         this.model.on(MapEvent.DrawGreen,this.onDrawGreen,this);
         this.model.on(MapEvent.Reset,this.onReset,this);
@@ -46,7 +46,7 @@ export class MapCellView extends cc.Component {
             case EMapEnum.NotUsed:
                 bg.getComponent(cc.Sprite).spriteFrame = null;
                 // GridMapFactory.debugDrawLine(_node, size, cc.Color.YELLOW);
-                GridMapFactory.debugDrawRect(_node,size,new cc.Color(255,255,0,32));
+                GridMapFactory.debugDrawRect(_node,size,new cc.Color(0,0,0,200));
                 break;
             case EMapEnum.Used:
                 GridMapFactory.debugDrawLine(_node, size, cc.Color.RED);
