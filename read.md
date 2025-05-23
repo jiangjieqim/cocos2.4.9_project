@@ -21,6 +21,7 @@
 [扩展插件](#扩展插件)  
 [引擎接口实现](#引擎接口实现)  
 [Editor扩展](#Editor扩展)  
+[微信分包设置](#微信分包设置)  
 
 微信开发者![](doc/4.jpg){h}https://mp.weixin.qq.com/{!h}  
 性能调优{h}https://zhuanlan.zhihu.com/p/297665769{!h}  
@@ -511,3 +512,6 @@ schedule (callback, interval, repeat, delay) {
  `target.convertToWorldSpaceAR(cc.v3())`  
 
 # Editor扩展
+
+# 微信分包设置
+![](doc/4.png)
