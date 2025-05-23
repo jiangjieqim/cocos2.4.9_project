@@ -27,7 +27,7 @@
             "label": "copy tasks",
             "type": "shell",
             "command": "copy .vscode\\tasks.json %githubdir%\\cc2_4_9\\doc\\tasks.json & cd %githubdir%\\cc2_4_9\\doc & TortoiseGitProc.exe /command:commit /path:tasks.json /closeonend:0 /logmsg:. & git push",
-            "problemMatcher": [],
+            "problemMatcher": []
         },
         {
             "label": "copy launch and tasks",
