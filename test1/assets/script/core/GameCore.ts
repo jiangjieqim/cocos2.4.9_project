@@ -16,7 +16,7 @@ export class GameCore extends cc.Component implements IGameCore{
             bundle.load(url, cc.Prefab, (err, prefab: cc.Prefab) => {
                 if (!err) {
                     let _node = cc.instantiate(prefab);
-                    that._msgLabel = _node.getComponent(MsgLabel);
+                    that._msgLabel = _node.addComponent(MsgLabel);
 
                     // _node.parent = this.node;
                     // that.init();

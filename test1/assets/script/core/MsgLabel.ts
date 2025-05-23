@@ -19,6 +19,7 @@ export class MsgLabel extends cc.Component {
         let that = this;
         this.scheduleOnce(()=>{
             // that.destroy();
-        },2);
+            that.node.parent = null;
+        },1);
     }
 }
