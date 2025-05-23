@@ -19,7 +19,9 @@ export class MapCellView extends cc.Component {
         let greenBg = _node.getChildByName("greenBg");
         greenBg.active = false;
         this.greenBg = greenBg;
-        // GridMapFactory.debugCreateLabel(_node, `${vo.isox},${vo.isoy}`);
+        if(gameCore.getQueryParam("debug")){
+            GridMapFactory.debugCreateLabel(_node, `${vo.isox},${vo.isoy}`);
+        }
         this.onRefresh();
         this.model.on(MapEvent.DrawGreen,this.onDrawGreen,this);
         this.model.on(MapEvent.Reset,this.onReset,this);

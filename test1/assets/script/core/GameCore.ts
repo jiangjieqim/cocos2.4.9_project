@@ -1,6 +1,7 @@
 import { MsgLabel } from "./MsgLabel";
 
 const { ccclass, property } = cc._decorator;
+
 @ccclass
 export class GameCore extends cc.Component implements IGameCore{
     private _msgLabel:MsgLabel;
@@ -32,6 +33,16 @@ export class GameCore extends cc.Component implements IGameCore{
             this._msgLabel.setData(_str);
             this._msgLabel.node.parent = this.node;
         }
+    }
+
+    getQueryParam(name: string) {
+        if (typeof window === "undefined" || !window.location.search) {
+            return undefined;
+        }
+        const reg = new RegExp(`(^|&)${encodeURIComponent(name)}=([^&]*)(&|$)`);
+        const match = window.location.search.slice(1).match(reg);
+    
+        return match ? decodeURIComponent(match[2]) : undefined;
     }
     
 }

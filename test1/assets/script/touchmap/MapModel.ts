@@ -58,10 +58,10 @@ export class MapModel extends cc.EventTarget implements IMapModel{
         //设置可以拖拽的区域
         // this.setMapGrid(0,0,EMapEnum.Used);
         this.setMapGrid(0,1,EMapEnum.Used);
-        this.setMapGrid(1,0,EMapEnum.Used);
+        // this.setMapGrid(1,0,EMapEnum.Used);
         this.setMapGrid(1,1,EMapEnum.Used);
         this.setMapGrid(1,2,EMapEnum.Used);
-        this.setMapGrid(2,0,EMapEnum.Used);
+        // this.setMapGrid(2,0,EMapEnum.Used);
         this.setMapGrid(2,1,EMapEnum.Used);
         this.setMapGrid(2,2,EMapEnum.Used);
         // this.setMapGrid(3,0,EMapEnum.Used);

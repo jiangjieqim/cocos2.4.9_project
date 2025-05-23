@@ -2,10 +2,10 @@
     "version": "1.4.0",
     "configurations": [
         {
-            "name": "Creator Debug: Launch Chrome",
+            "name": "Creator Debug",
             "type": "chrome",
             "request": "launch",
-            "url": "http://localhost:7457",
+            "url": "http://localhost:7457?debug2=1",
             "sourceMaps": true,
             // "userDataDir": "${workspaceFolder}/.vscode/chrome",
             "runtimeExecutable": "${env:chromepath}",
