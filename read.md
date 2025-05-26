@@ -22,6 +22,7 @@
 [引擎接口实现](#引擎接口实现)  
 [Editor扩展](#Editor扩展)  
 [微信分包设置](#微信分包设置)  
+[远程加载资源](#远程加载资源)  
 
 微信开发者![](doc/4.jpg){h}https://mp.weixin.qq.com/{!h}  
 性能调优{h}https://zhuanlan.zhihu.com/p/297665769{!h}  
@@ -515,3 +516,17 @@ schedule (callback, interval, repeat, delay) {
 
 # 微信分包设置
 ![](doc/4.png)
+
+# 远程加载资源
+```ts
+const remoteUrl = "https://example.com/image.png";
+cc.assetManager.loadRemote<cc.Texture2D>(remoteUrl, (err, texture) => {
+    if (err) {
+        console.error("加载失败:", err);
+        return;
+    }
+    // 创建 SpriteFrame 并应用到 Sprite 组件
+    const spriteFrame = new cc.SpriteFrame(texture);
+    this.node.getComponent(cc.Sprite).spriteFrame = spriteFrame;
+});
+```
