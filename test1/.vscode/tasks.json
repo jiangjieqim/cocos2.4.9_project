@@ -52,7 +52,13 @@
         {
             "label": "build_wx(构建 微信)",
             "type": "shell",
-            "command": "echo off & cd../ && call skip build_wx ${workspaceFolder}",
+            "command": "echo off & cd../ && call skip build_wx ${workspaceFolder} wechatgame",
+            "problemMatcher": []
+        },
+        {
+            "label": "build_bytedance(构建 抖音)",
+            "type": "shell",
+            "command": "echo off & cd../ && call skip build_wx ${workspaceFolder} bytedance",
             "problemMatcher": []
         },
         {
