@@ -31,12 +31,6 @@
             "command": "echo off & cd ../../../ & cd github/jjqmdlib/cmd & call opendoc ${file}",
             "problemMatcher": []
         },
-        {
-            "label": "构建 web-mobile",
-            "type": "shell",
-            "command": "echo off & cd../ && call skip compile ${workspaceFolder} \"d88d9995-63a9-457c-b131-7fda8bb4a59c\"",
-            "problemMatcher": []
-        },
         // {
         //     "label": "compile web-mobile (code)",
         //     "type": "shell",
@@ -50,7 +44,15 @@
             "problemMatcher": []
         },
         {
-            "label": "build_wx(构建 微信)",
+            "label": "build web-mobile(构建 web)",
+            "type": "shell",
+            "command": "echo off & cd../ && call skip compile ${workspaceFolder} \"d88d9995-63a9-457c-b131-7fda8bb4a59c\"",
+            // "command": "echo off & cd../ && call skip build_wx ${workspaceFolder} web-mobile",
+
+            "problemMatcher": []
+        },
+        {
+            "label": "build_wechatgame(构建 微信)",
             "type": "shell",
             "command": "echo off & cd../ && call skip build_wx ${workspaceFolder} wechatgame",
             "problemMatcher": []
