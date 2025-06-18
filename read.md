@@ -196,6 +196,10 @@ window['TestLib'] = TestLib;
     |--preview-templates
 
 
+{r}cocos creator原生编辑器卡顿解决方案{!r}  
+`console中打印日志,之后断点调试`  
+
+
 # cocos-cli  
 {h}https://www.npmjs.com/package/cocos-cli{!h}  
 
