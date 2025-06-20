@@ -21,7 +21,7 @@
 [扩展插件](#扩展插件)  
 [引擎接口实现](#引擎接口实现)  
 [Editor扩展](#Editor扩展)  
-[微信分包设置](#微信分包设置)  
+[bunder包设置](#bunder包设置)  
 [远程加载资源](#远程加载资源)  
 
 微信开发者![](doc/4.jpg){h}https://mp.weixin.qq.com/{!h}  
@@ -518,8 +518,48 @@ schedule (callback, interval, repeat, delay) {
 
 # Editor扩展
 
-# 微信分包设置
+# bunder包设置
+分包设置  
 ![](doc/4.png)
+
+配置为远程包  
+![](doc/7.jpg)
+
+airplane.meta
+```json
+{
+  "ver": "1.1.3",
+  "uuid": "985a25e7-a7cd-4416-a82c-5f66dbb9a29c",
+  "importer": "folder",
+  "isBundle": true,
+  "bundleName": "",
+  "priority": "5",
+  "compressionType": {
+    "wechatgame": "merge_all_json",
+    "bytedance": "merge_all_json",
+    "web-mobile": "merge_all_json"
+  },
+  "optimizeHotUpdate": {
+    "wechatgame": false,
+    "bytedance": false,
+    "web-mobile": false
+  },
+  "inlineSpriteFrames": {
+    "wechatgame": false,
+    "bytedance": false,
+    "web-mobile": false
+  },
+  "isRemoteBundle": {
+    "wechatgame": true,
+    "bytedance": true,
+    "web-mobile": false
+  },
+  "subMetas": {}
+}
+
+```
+
+
 
 # 远程加载资源
 ```ts
