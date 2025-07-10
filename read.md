@@ -121,6 +121,8 @@ EditBox
 widget 
 {h}https://docs.cocos.com/creator/2.2/manual/zh/components/widget.html?h=widget{!h}  
 
+`Layout`  
+![](doc/5.png)
 
 # 常见问题
 
