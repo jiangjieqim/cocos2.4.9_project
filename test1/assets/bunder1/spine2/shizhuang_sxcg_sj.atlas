@@ -1,0 +1,20 @@
+
+shizhuang_sxcg_sj.png
+size: 256,128
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+hexin_img_bottom07
+  rotate: false
+  xy: 0, 40
+  size: 225, 28
+  orig: 225, 28
+  offset: 0, 0
+  index: -1
+shengxingchenggong
+  rotate: false
+  xy: 0, 0
+  size: 149, 38
+  orig: 149, 38
+  offset: 0, 0
+  index: -1
