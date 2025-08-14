@@ -19,7 +19,9 @@ export default class ToolsView extends cc.Component {
     }
 
     private get url(){
-        return `http://${window.location.host}/api`;
+        let s = window.location.host;
+        let arr = s.split(":");
+        return `http://${arr[0]}:8005/api`;
     }
 
     /**构建web */
