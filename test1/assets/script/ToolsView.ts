@@ -17,7 +17,6 @@ export default class ToolsView extends cc.Component {
         this.build_web_btn.on("click", this.onBuildWeb, this);
         // this.progressBar = this.node.getChildByName("progressBar").getComponent(cc.ProgressBar);
     }
-
     private get url(){
         let s = window.location.host;
         let arr = s.split(":");
