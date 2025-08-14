@@ -1,13 +1,17 @@
 {
-  "title": "test1",
+  "title": "tools",
   "packageName": "org.cocos2d.demo",
-  "startScene": "4ee9d998-5955-493a-a75f-b96995ca6de7",
+  "startScene": "e374d784-26ed-4ab8-8e3d-f967c13e0727",
   "excludeScenes": [
     "bd27fae3-0079-4301-a2ad-bad41d568fa5",
     "caf42390-5dd1-47a9-a2c0-675a9720f460",
     "2c7a52b3-75fc-48de-a482-fd747cb972b3",
     "d88d9995-63a9-457c-b131-7fda8bb4a59c",
-    "eed062a1-89bd-4e8c-8459-629067930f03"
+    "eed062a1-89bd-4e8c-8459-629067930f03",
+    "b517eea8-46e4-4316-905d-b5363e9af2f0",
+    "e8e4bd9c-709d-4663-b955-8908f3651c47",
+    "6dca47e8-96c8-4354-9cec-fdec762fd83e",
+    "4ee9d998-5955-493a-a75f-b96995ca6de7"
   ],
   "orientation": {
     "landscapeRight": true,
